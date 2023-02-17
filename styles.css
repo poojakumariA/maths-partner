@@ -1,27 +1,77 @@
-#mySearch {
-    width: 100%;
-    font-size: 18px;
-    padding: 11px;
-    border: 1px solid #ddd;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+body{
+  background-color: rgb(220, 224, 224);
+}
+.container{
+  display: flex;
+  /* border: 2px solid red; */
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+.upper-container{
+  /* border: 2px solid cyan; */
+  text-align: center;
+  padding: 20px;
+  font-size: larger;
+  font-weight: 700;
+  line-height: 50px;
+}
+.subContainer{
  
-  /* Style the navigation menu */
-  #myMenu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
- 
-  /* Style the navigation links */
-  #myMenu li a {
-    padding: 12px;
-    text-decoration: none;
-    color: black;
-    display: block
-  }
- 
-  #myMenu li a:hover {
-    background-color: #eee;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 500px;
+  min-height: 400px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 10px 10px 15px rgba(128, 128, 128, 0.106),10px 10px 15px rgba(128, 128, 128, 0.106);
+}
+#deleteBtn{
+  margin: 20px;
+}
+
+#heading{
+  align-self: flex-start;
+  margin-top: 50px;
+  
+}
+.middle-container{
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  min-width: 400px;
+  gap: 6px;
+}
+.box,.box2,.box3{
+  /* border: 2px solid blue; */
+  flex: 1;
+  
+}
+#problemBar, #categoryBar,#historyBtn,#savedBtn,#searchBtn{
+  min-width: 300px;
+  min-height: 50px;
+  font-size: medium;
+  font-weight: 500;
+  border-radius: 7px;
+  
+}
+#savedBtn, #categoryBar,#historyBtn{
+  background-color: rgba(0, 0, 0, 0.846);
+  color: white;
+}
+#problemBar{
+  background-color: gainsboro;
+  color: black;
+}
