@@ -1,26 +1,72 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Math Partner</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/eb339bb978.js" crossorigin="anonymous"></script>
+</head>
+
 <body>
-    <form>
-        Keyword:<br>
-        <input type="text" name="keyword"><br>
-        <button type="submit" onclick="callREST()">Search</button>
+    <div class="container">
+    <div class="upper-container">
+        <p> Math Partner</p>
+        <input type="button" id="historyBtn" value="History" onclick="historyButton()">
+        <input type="button" id="savedBtn" value="SAVED SOLUTIONS" onclick="SavedButton()">
+    </div>
+    <div class="historycon">
+       
+    </div>
 
-    </form>
-    <div id="response"></div>
+    <!-- second sstep -->
+    <div class="subContainer">
+    <div class="middle-container">
+        <div class="box1">
+            <label for="problemBar"><h2>Problem</h2></label>
+            <input type="text" id="problemBar" placeholder="TYPE HERE......" >
+        </div>
 
-    <script>
-        function callREST() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("response").innerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", "https://newton.vercel.app/api/v2/derive/x", true);
-            xhttp.send();
-        }
-    </script>
+        <div class="box2">
+            <label for="categoryBar"><h2>select Category</h2></label>
+            <select name="categoryBar" id="categoryBar">
+                <option value="simplify">Simplify</option>
+                <option value="factor">Factor</option>
+                <option value="derive">Derive</option>
+                <option value="integrate">Integrate</option>
+                <option value="zeroes">Find 0's</option>
+                <option value="tangent">Find Tangent</option>
+                <option value="area">Area Under Curve</option>
+                <option value="cos">Cosine</option>
+                <option value="sin">Sine</option>
+                <option value="tan">Tangent</option>
+                <option value="arccos">Inverse Cosine</option>
+                <option value="arcsin">Inverse Sine</option>
+                <option value="arctan">Inverse Tangent</option>
+                <option value="abs">Absolute Value</option>
+                <option value="log">Logarithm</option>
+            </select>
+        </div>
+
+        <div class="box3">
+            <button type="submit" id="searchBtn" onclick="SearchButton()"><i class="fa-solid fa-magnifying-glass fa-3x"></i></button>
+        </div>
+       
+    </div>
+
+
+    <div class="container-input">
+        <div class="inputBox1"></div>
+        <div class="inputBox2"></div>
+ 
+        <button type="reset" id="deleteBtn" onclick="delBtn()"><i class="fa-solid fa-trash-can fa-3x"></i></button>
+    </div>
+    </div>  
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
